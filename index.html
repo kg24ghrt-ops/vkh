@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paper Sheets — Regional Sizes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Regional Paper Sizes</h1>
+    <p id="gpu-notice" class="hidden" aria-live="polite">WebGPU unavailable — showing CSS fallback</p>
+  </header>
+
+  <nav aria-label="Select paper region">
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" aria-controls="panel-us" id="tab-us" data-region="us">United States<br><span>Letter 215.9×279.4 mm</span></button>
+      <button role="tab" aria-selected="false" aria-controls="panel-eu" id="tab-eu" data-region="eu">Europe<br><span>A4 210×297 mm</span></button>
+      <button role="tab" aria-selected="false" aria-controls="panel-asia" id="tab-asia" data-region="asia">Asia<br><span>B5 182×257 mm</span></button>
+      <button role="tab" aria-selected="false" aria-controls="panel-latam" id="tab-latam" data-region="latam">Latin America<br><span>Oficio 215.9×330 mm</span></button>
+    </div>
+  </nav>
+
+  <main>
+    <section id="panel-us" role="tabpanel" aria-labelledby="tab-us" class="sheet-panel active">
+      <canvas class="sheet-canvas" data-region="us"></canvas>
+    </section>
+    <section id="panel-eu" role="tabpanel" aria-labelledby="tab-eu" class="sheet-panel hidden">
+      <canvas class="sheet-canvas" data-region="eu"></canvas>
+    </section>
+    <section id="panel-asia" role="tabpanel" aria-labelledby="tab-asia" class="sheet-panel hidden">
+      <canvas class="sheet-canvas" data-region="asia"></canvas>
+    </section>
+    <section id="panel-latam" role="tabpanel" aria-labelledby="tab-latam" class="sheet-panel hidden">
+      <canvas class="sheet-canvas" data-region="latam"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>Sheet dimensions are true aspect ratios. Hover or tilt to shift lighting.</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
